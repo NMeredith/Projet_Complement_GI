@@ -1,8 +1,3 @@
-<div class="input-group rounded">
-  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
-  <span class="input-group-text border-0" id="search-addon">
-  </span>
-</div>
 <table class="table bg-cream">
   <thead>
     <tr>
@@ -18,11 +13,17 @@
       <td>{{doc.id}}</td>
       <td>{{doc.nom}}</td>
       <td>{{doc.date|date:'dd/MM/yyyy'}}</td>
-      <td><a href="">lien</a></td>
-      <td><a href="" onclick="alert('Êtes-vous sûr ?')">X</a></td>
+      <td><button type="button" class="btn btn-primary " (click)="afficheFile(doc.file)">LIEN</button></td>
+      <td><button type="button" class="btn btn-danger "(click)="delete(doc.id)">X</button></td>
     </tr>
   </tbody>
 </table>
 
-
+<nav aria-label="Page navigation example">
+  <ul class="pagination justify-content-center">
+    <li class="page-item"><a class="page-link"  (click)="previous()">Previous</a></li>
+    <li class="page-item"><a class="page-link" >{{pageIndex+1}}</a></li>
+    <li class="page-item"><a class="page-link" (click)="next()">Next</a></li>
+  </ul>
+</nav>
 
