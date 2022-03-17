@@ -1,7 +1,6 @@
 <div class="input-group rounded">
   <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
   <span class="input-group-text border-0" id="search-addon">
-    <fa-icon [icon]="iconSearch"></fa-icon>
   </span>
 </div>
 <table class="table bg-cream">
@@ -14,20 +13,16 @@
       <th>Supprimer l'archive</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody *ngFor="let doc of documents" >
     <tr>
-      <td>1</td>
-      <td>doc13.txt</td>
-      <td>09/09/2020</td>
-      <td><a href="">lien</a></td>
-      <td><a href="" onclick="alert('Êtes-vous sûr ?')">X</a></td>
-    </tr>
-    <tr>
-      <td>3</td>
-      <td>doc37.xlsx</td>
-      <td>03/11/2021</td>
+      <td>{{doc.id}}</td>
+      <td>{{doc.nom}}</td>
+      <td>{{doc.date|date:'dd/MM/yyyy'}}</td>
       <td><a href="">lien</a></td>
       <td><a href="" onclick="alert('Êtes-vous sûr ?')">X</a></td>
     </tr>
   </tbody>
 </table>
+
+
+

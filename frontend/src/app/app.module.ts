@@ -9,6 +9,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { ListDocComponent } from './list-doc/list-doc.component';
 import { ArchivageComponent } from './archivage/archivage.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,9 @@ import { StatistiquesComponent } from './statistiques/statistiques.component';
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
