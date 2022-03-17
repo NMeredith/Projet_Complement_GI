@@ -43,26 +43,6 @@ export class DocumentService {
     return this.http.get<Page>(this.urlServer.tousLesDocuments.replace(':number', offset));
   }
 
-  // getdata(offset : number): Observable<Page>{
-  //   return this.http.get<Page>(this.urlServer.tousLesDocuments.replace(':number', offset)).pipe(
-  //    map((data: Page)=> {
-  //     return data.map(u => ({content: u.content}))
-  //    })
-  //   )
-  //  }
-
-    // PUTAIN(offset: number): Observable<Document[]> {
-    //   return this.http.get(this.urlServer.tousLesDocuments.replace(':number', offset)).pipe(
-    //     map(res => {
-    //         return res.json().results.map(item => {
-    //           return new Document(
-    //               item.id,
-    //           );
-    //         });
-    //       });
-    //   )
-
-    // }
 
 
   getStatsType(): Observable<Document[]> {

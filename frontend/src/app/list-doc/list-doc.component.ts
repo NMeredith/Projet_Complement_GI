@@ -9,22 +9,61 @@ import { Page } from '../model/page';
   styleUrls: ['./list-doc.component.scss'],
 })
 export class ListDocComponent implements OnInit {
-  page: any ={};
-  documents: any [] = [];
-  currentIndex: number =0;
-
+  page: any = {};
+  documents: any[] = [];
+  pageIndex = 0;
+  started: boolean | undefined = true;
+  ended:boolean | undefined = true;
 
   constructor(private listDocumentService: DocumentService) {
-    //Rien à faire ici
-  }
 
+  }
   ngOnInit(): void {
-    this.listDocumentService.fetch(this.currentIndex).subscribe(files => {
-      this.page = files ;
-      if(this.page.content){
-        this.documents = this.page.content;      }
+    this.listDocumentService.fetch(this.pageIndex).subscribe((files) => {
+      if (files.content ) {
+        console.log(files.first, files.last);
+        this.started = files.first;
+        this.ended = files.last;
+        this.documents = files.content;
+      }
 
     });
   }
 
+  next(): void {
+    if(this.ended){
+      return;
+    }
+    this.pageIndex++;
+    this.listDocumentService.fetch(this.pageIndex).subscribe((files) => {
+      if (files.content) {
+        this.started = files.first;
+        this.ended = files.last;
+        this.documents = files.content;
+      }
+    });
+  }
+
+  previous(): void{
+    if(this.started){
+      return;
+    }
+    this.pageIndex--;
+    this.listDocumentService.fetch(this.pageIndex).subscribe((files) => {
+      if (files.content) {
+        this.started = files.first;
+        this.ended = files.last;
+        this.documents = files.content;
+      }
+    });
+  }
+
+  afficheFile(file:string): void{
+    alert(file);
+  }
+
+  delete(id: number): void {
+    this.listDocumentService.delete(id);
+  }
 }
+
