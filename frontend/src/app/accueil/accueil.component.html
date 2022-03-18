@@ -1,1 +1,36 @@
-<p>Accueil works !</p>
+<h2>Projet CGL par Hugo Brangbour et Mérédith Nolin</h2>
+	<p>
+	Le but du projet est de développer une application web permettant d'archiver des documents et consulter les documents archivés.<br/>
+	</p>
+	<h3>Spécifations de l'application</h3>
+	<p>
+	L'application contient au moins 4 pages distinctes :
+	<ul>
+		<li>
+			La page "Archiver" : permettant d'archiver un document. Cette page contient un formulaire avec les champs suivants :
+			<ul>
+				<li>Le document à archiver, qu'on sélectione avec un input de type "file"
+				(dans le cadre du projet, on se contentera d'archiver le chemin vers le document et non le document lui-même)</li>
+				<li>Le nom sous lequel on va archiver le document dans l'application
+				(c'est lui qui sera affiché dans la liste des documents archivés)</li>
+				<li>Le type du document, qui doit être "texte", "audio", "vidéo" ou "binaire"</li>
+			</ul>
+		</li>
+		<li>
+			La page "Consulter" : permettant de consulter les documents archivés. Cette page liste l'ensemble des documents archivés via l'utilisation de la page précédente.<br/>
+			Chaque ligne de cette liste contient les éléments suivants :
+			<ul>
+				<li>Le nom du document dans l'application</li>
+				<li>Le type du document</li>
+				<li>Un bouton pour visualiser le document (dans le cadre du projet, on se contentera d'afficher le chemin vers le document)</li>
+				<li>Un bouton pour supprimer l'archive (dans le cadre du projet, cela revient à supprimer la ou les ligne(s) dans la base de données)
+			</ul>
+		<li>
+			La page "Archiver" : affichant les statistiques d'archivage de documents.<br/>
+			Cette page montre le nombre de documents archivés par date,par type de document ou par les deux à la fois.<br/>
+		<li>
+      La page "Accueil" : permettant d'accéder à chacune des trois pages précédentes.<br/>
+			Cette page doit être accessible directment (via un bouton ou un hyperlien) depuis chacune des autres pages.
+		</li>
+		<li>Une page d'erreur 404 personnalisée pour les autres URL</li>
+	</ul>
