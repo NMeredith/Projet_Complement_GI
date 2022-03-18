@@ -31,22 +31,8 @@ export class DocumentService {
 
   }
 
-  get employees$(): Observable<string> {
-    return this.employees.asObservable();
-  }
-
-  updatedEmployeeList(data: string){
-    this.employees.next(data);
-  }
-
   fetch(offset : number): Observable<Page> {
     return this.http.get<Page>(this.urlServer.tousLesDocuments.replace(':number', offset));
-  }
-
-
-
-  getStatsType(): Observable<Document[]> {
-    return this.http.get<Document[]>(this.urlServer.statsType);
   }
 
 
@@ -62,4 +48,13 @@ export class DocumentService {
     return this.http.get(this.urlServer.unDocument.replace(':id', id));
   }
 
+  getStatsType(): Observable<any> {
+    return this.http.get<any>(this.urlServer.statsType);
+  }
+  getStatsDate(): Observable<any> {
+    return this.http.get<any>(this.urlServer.statsDate);
+  }
+  getStatsDeux(): Observable<any> {
+    return this.http.get<any>(this.urlServer.statsDeux);
+  }
 }

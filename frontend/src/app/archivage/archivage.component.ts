@@ -17,35 +17,6 @@ export class ArchivageComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  archiverDocument(): void {
-    console.log(this.doc);
-    const data = {
-      file: this.doc.file,
-      nom: this.doc.nom,
-      type: this.doc.type,
-      date: this.doc.date,
-    };
-    this.documentService.create(data).subscribe(
-      {
-        next: (result: any) => {
-          console.log(result);
-        },
-        error: (err: any) => {
-          console.log(err);
-        },
-        complete: () => {
-          console.log('complete');
-        },
-      }
-      // (response) => {
-      //   console.log(response);
-      //   this.submitted = true;
-      // },
-      // (error) => {
-      //   console.log(error);
-      // }
-    );
-  }
   add() {
     console.log(this.doc)
     const tempDoc= this.doc;
@@ -63,10 +34,6 @@ export class ArchivageComponent implements OnInit {
 
   newDocument(): void {
     this.submitted = false;
-    this.doc = {
-      nom: '',
-      file: '',
-      date: new Date(),
-    };
+    this.doc.nom = '';
   }
 }

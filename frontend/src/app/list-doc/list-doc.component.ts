@@ -26,7 +26,6 @@ export class ListDocComponent implements OnInit {
         this.ended = files.last;
         this.documents = files.content;
       }
-
     });
   }
 
