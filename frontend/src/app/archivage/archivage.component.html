@@ -1,24 +1,52 @@
-<form class="row g- needs-validation" novalidate>
+<div style="width: 500px; margin: auto">
+  <div class="submit-form">
+    <div *ngIf="!submitted">
+      <div class="form-group">
+        <label for="name">Nom de l'archive</label>
+        <input
+          type="text"
+          class="form-control"
+          id="name"
+          required
+          [(ngModel)]="doc.nom"
+          name="nom"
+        />
+      </div>
 
-    <div class="col-md-4">
-      <label for="validationCustomFile" class="form-label">Charger le document</label>
-      <input type="file" class="form-control" id="validationCustomFile" required>
-      <div class="valid-feedback">
-        C'est bon !
-      </div>
-      <div class="invalid-feedback">
-        Please select a valid state.
-      </div>
-    </div>
-    <div class="col-md-4">
-      <label for="validationCustomName" class="form-label">Nom de l'archive</label>
-      <input type="text" class="form-control" id="validationCustomName" placeholder="Entrer le nom" required>
-      <div class="valid-feedback">
-        C'est bon !
-      </div>
-    </div>
+      <div class="form-group">
+        <label for="type-select">Choose a type:</label>
+          <select name="type" id="type-select" required [(ngModel)]="doc.type">
+            <option value="">--Please choose an option--</option>
+            <option value="texte">Texte</option>
+            <option value="audio">Audio</option>
+            <option value="vidéo">Vidéo</option>
+            <option value="binaire">Binaire</option>
+          </select>
 
-    <div class="col-12">
-      <button class="btn btn-primary" type="submit">Submit form</button>
+      </div>
+
+      <div class="form-group">
+        <label for="validationCustomFile" class="form-label"
+          >Charger le document</label
+        >
+        <input
+          type="file"
+          class="form-control"
+          id="validationCustomFile"
+          required
+          [(ngModel)]="doc.file"
+          name="file"
+        />
+        <div class="valid-feedback">C'est bon !</div>
+        <div class="invalid-feedback">Please select a valid state.</div>
+      </div>
+      <button (click)="add()" class="btn btn-success">
+        Archiver
+      </button>
     </div>
-  </form>
+    <div *ngIf="submitted">
+      <h3>Document successfully archivé !</h3>
+      <button class="btn btn-success" (click)="newDocument()">New..</button>
+    </div>
+  </div>
+</div>

@@ -54,17 +54,12 @@ export class DocumentService {
     return this.http.delete(this.urlServer.unDocument.replace(':id', id));
   }
 
-  create(employe: Document): Observable<Document> {
-    return this.http.post<Document>(this.urlServer.tousLesDocuments, employe);
+  create(doc: Document): Observable<any> {
+    return this.http.post(this.urlServer.archiver, doc);
   }
 
   read(id: number): Observable<any> {
     return this.http.get(this.urlServer.unDocument.replace(':id', id));
   }
-
-  update(employe: Document): Observable<Document> {
-    return this.http.put<Document>(this.urlServer.unDocument.replace(':id', employe.id), employe);
-  }
-
 
 }

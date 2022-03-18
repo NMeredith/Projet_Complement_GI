@@ -7,7 +7,8 @@ export const environment = {
     endpoints: {
       tousLesDocuments: '/document/?offset=:number',
       unDocument: '/document/:id',
-      statsType: '/document/statsType'
+      statsType: '/document/statsType',
+      archiver: '/document/',
     }
   }
 };
