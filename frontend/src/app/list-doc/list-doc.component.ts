@@ -58,12 +58,13 @@ export class ListDocComponent implements OnInit {
     });
   }
 
-  afficheFile(file:string): void{
+  afficherFile(file:string): void{
     alert(file);
   }
 
-  delete(id: number): void {
+  supprimer(id: number): void {
     this.listDocumentService.delete(id);
   }
+
 }
 

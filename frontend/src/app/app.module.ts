@@ -11,6 +11,8 @@ import { ArchivageComponent } from './archivage/archivage.component';
 import { StatistiquesComponent } from './statistiques/statistiques.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
+import { NotFoundComponent } from './not-found/not-found.component';
+import { DetailsDocComponent } from './details-doc/details-doc.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { FormsModule } from '@angular/forms';
     AccueilComponent,
     ListDocComponent,
     ArchivageComponent,
-    StatistiquesComponent
+    StatistiquesComponent,
+    NotFoundComponent,
+    DetailsDocComponent
   ],
   imports: [
     BrowserModule,

@@ -49,10 +49,6 @@ export class DocumentService {
     return this.http.get<Document[]>(this.urlServer.statsType);
   }
 
-  search(name: string): Observable<Document[]> {
-    return this.http.get<Document[]>(this.urlServer.filterByName.replace(':name', name));
-  }
-
 
   delete(id: number): Observable<any> {
     return this.http.delete(this.urlServer.unDocument.replace(':id', id));
@@ -62,8 +58,8 @@ export class DocumentService {
     return this.http.post<Document>(this.urlServer.tousLesDocuments, employe);
   }
 
-  fetchOne(id: number): Observable<Document> {
-    return this.http.get<Document>(this.urlServer.unDocument.replace(':id', id));
+  read(id: number): Observable<any> {
+    return this.http.get(this.urlServer.unDocument.replace(':id', id));
   }
 
   update(employe: Document): Observable<Document> {

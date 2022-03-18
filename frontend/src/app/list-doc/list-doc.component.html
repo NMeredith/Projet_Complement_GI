@@ -1,8 +1,8 @@
 <table class="table bg-cream">
   <thead>
     <tr>
-      <th>ID</th>
       <th>Nom du document</th>
+      <th>Type</th>
       <th>Date d'archivage</th>
       <th>Télécharger l'archive</th>
       <th>Supprimer l'archive</th>
@@ -10,11 +10,17 @@
   </thead>
   <tbody *ngFor="let doc of documents" >
     <tr>
-      <td>{{doc.id}}</td>
       <td>{{doc.nom}}</td>
+      <td>{{doc.type.nom}}</td>
       <td>{{doc.date|date:'dd/MM/yyyy'}}</td>
-      <td><button type="button" class="btn btn-primary " (click)="afficheFile(doc.file)">LIEN</button></td>
-      <td><button type="button" class="btn btn-danger "(click)="delete(doc.id)">X</button></td>
+      <td><button type="button" class="btn btn-primary " (click)="afficherFile(doc.file)">LIEN</button></td>
+      <td><button
+        type="button"
+        class="btn btn-danger"
+        routerLink="/document/{{ doc.id }}"
+      >
+         Supprimer
+      </button></td>
     </tr>
   </tbody>
 </table>
