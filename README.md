@@ -1,7 +1,7 @@
 # Projet_Complement_GI par Hugo Brangbour et Mérédith Nolin
 
 backend :
-mvn clean install
+mvn clean install,
 run BackApplication
 
 frontend :
